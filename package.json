@@ -1,0 +1,41 @@
+{
+  "name": "@synonymdev/slashtags-keychain",
+  "version": "1.0.0-alpha.0",
+  "description": "A utility module for generating keyPairs for Slashtags",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slashtags/keychain.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf types",
+    "lint": "standard --fix",
+    "test": "brittle test/*.js -cov",
+    "depcheck": "npx depcheck",
+    "fullcheck": "npm run lint && npm run clean && npm run build && npm run test && npm run depcheck",
+    "prepublishOnly": "npm run fullcheck"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slashtags/keychain/issues"
+  },
+  "homepage": "https://github.com/slashtags/keychain/tree/master/#readme",
+  "files": [
+    "index.js",
+    "lib",
+    "types",
+    "!**/*.tsbuildinfo"
+  ],
+  "dependencies": {
+    "b4a": "^1.6.4",
+    "sodium-universal": "^4.0.0"
+  },
+  "devDependencies": {
+    "brittle": "^3.0.2",
+    "depcheck": "^1.4.3",
+    "standard": "^17.0.0",
+    "typescript": "^5.2.2"
+  }
+}
